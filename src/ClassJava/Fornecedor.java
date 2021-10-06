@@ -1,11 +1,14 @@
 package ClassJava;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fornecedor {
 
     private long id;
     private String nome;
     private String cnpj;
-    // lista de contatos
+    private List<Contatos> contatos = new ArrayList<Contatos>(); // lista de contatos
     // OBJETO -> endereço
 
     public Fornecedor(long id, String nome, String cnpj) {
@@ -38,12 +41,21 @@ public class Fornecedor {
         this.cnpj = cnpj;
     }
 
+    public List<Contatos> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contatos> contatos) {
+        this.contatos = contatos;
+    }
+
     @Override
     public String toString() {
         return "Fornecedor{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cnpj='" + cnpj + '\'' +
+                ", contatos=" + contatos +
                 '}';
     }
 }

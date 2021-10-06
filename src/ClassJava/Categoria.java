@@ -1,11 +1,13 @@
 package ClassJava;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Categoria {
 
     private String nome;
     private long id;
-    // lista de produtos
-
+    private List<Produto> produto = new ArrayList<Produto>();
 
     public Categoria(String nome, long id) {
         this.nome = nome;
@@ -28,6 +30,14 @@ public class Categoria {
         this.id = id;
     }
 
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
+    }
+
     // sem métodos
 
     @Override
@@ -35,6 +45,7 @@ public class Categoria {
         return "Categoria{" +
                 "nome='" + nome + '\'' +
                 ", id=" + id +
+                ", produto=" + produto +
                 '}';
     }
 }
