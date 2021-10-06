@@ -11,11 +11,12 @@ public class Produto {
     private String nome;
     private Double preco;
     private int qtd;
+    private Fornecedor fornecedor; // obj
+
     private List<ModelosDosProdutos> modeloDosProdutos = new ArrayList<ModelosDosProdutos>();
     private List<Cor> cor = new ArrayList<Cor>();
     private Categoria categoria;
     private List<Tamanho> tamanho = new ArrayList<Tamanho>();
-    private Fornecedor fornecedor; // obj
 
     public Produto(long id, String nome, Double preco, int qtd, ClassJava.Fornecedor fornecedor, ClassJava.Categoria categoria) {
         this.id = id;

@@ -1,15 +1,34 @@
 package ClassJava;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Funcionarios {
     private long id;
     private String nome, cargo;
-    // lista de contatos
-    // OBJETO -> ENDEREÇO
+    private Endereco endereco;
+    private List<Contatos> contatos = new ArrayList<Contatos>();
 
-    public Funcionarios(long id, String nome, String cargo) {
+    public Funcionarios(long id, String nome, String cargo, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.cargo = cargo;
+        this.endereco = endereco;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public List<Contatos> getCursos() {
+        return contatos;
+    }
+
+    public void setCursos(List<Contatos> cursos) {
+        this.contatos = contatos;
     }
 
     public long getId() {
@@ -42,6 +61,8 @@ public class Funcionarios {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cargo='" + cargo + '\'' +
+                ", endereco=" + endereco +
+                ", contatos=" + contatos +
                 '}';
     }
 }
