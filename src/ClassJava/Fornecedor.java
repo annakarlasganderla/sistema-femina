@@ -8,13 +8,15 @@ public class Fornecedor {
     private long id;
     private String nome;
     private String cnpj;
-    private List<Contatos> contatos = new ArrayList<Contatos>(); // lista de contatos
-    // OBJETO -> endereço
+    private Endereco endereco; // OBJETO -> endereço
 
-    public Fornecedor(long id, String nome, String cnpj) {
+    private List<Contatos> contatos = new ArrayList<Contatos>(); // lista de contatos
+
+    public Fornecedor(long id, String nome, String cnpj, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
+        this.endereco = endereco;
     }
 
     public long getId() {
@@ -41,6 +43,14 @@ public class Fornecedor {
         this.cnpj = cnpj;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     public List<Contatos> getContatos() {
         return contatos;
     }
@@ -55,6 +65,7 @@ public class Fornecedor {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cnpj='" + cnpj + '\'' +
+                ", endereco=" + endereco +
                 ", contatos=" + contatos +
                 '}';
     }
