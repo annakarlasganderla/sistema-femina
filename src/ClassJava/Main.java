@@ -9,7 +9,12 @@ public class Main {
         Categoria cat1 = new Categoria("fruta",5);
         Tamanho t1 = new Tamanho("p", 15);
 
-        Fornecedor fornecedor1 = new Fornecedor(15,"frutas.ltda","1254684546");
+        Endereco endereco = new Endereco("brasil","paraná","foz do iguaçu","tangará","123456",123);
+
+        Contatos contato1 = new Contatos(1,"456456","anna@gmail.com");
+
+        Fornecedor fornecedor1 = new Fornecedor(15,"frutas.ltda","1254684546",endereco);
+
         Produto p1 = new Produto(1,"banana",1.22,5,fornecedor1);
 
         p1.getModeloDosProdutos().add(mod);
