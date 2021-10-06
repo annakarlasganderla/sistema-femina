@@ -17,6 +17,8 @@ public class Main {
         p1.getCategoria().add(cat1);
         p1.getTamanho().add(t1);
 
+
+
         System.out.println(p1);
     }
 }

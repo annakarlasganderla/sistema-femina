@@ -1,18 +1,29 @@
 package ClassJava;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Cliente {
 
     private long id;
     private String nome,senha;
     private int idade;
-    // lista/objeto -> contatos
-    // OBJETO -> endereço
+    private List<Contatos> contatos = new ArrayList<Contatos>();
+    private Endereco endereco;
 
     public Cliente(long id, String nome, String senha, int idade) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.idade = idade;
+    }
+
+    public Cliente(long id, String nome, String senha, int idade, Endereco endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.senha = senha;
+        this.idade = idade;
+        this.endereco = endereco;
     }
 
     public long getId() {
@@ -47,6 +58,22 @@ public class Cliente {
         this.idade = idade;
     }
 
+    public List<Contatos> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contatos> contatos) {
+        this.contatos = contatos;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -54,6 +81,8 @@ public class Cliente {
                 ", nome='" + nome + '\'' +
                 ", senha='" + senha + '\'' +
                 ", idade=" + idade +
+                ", contatos=" + contatos +
+                ", endereco=" + endereco +
                 '}';
     }
 }
