@@ -7,11 +7,13 @@ public class Marca {
 
     private long id;
     private String nome;
+    private Endereco enderecoMarca;
     private List<Contatos> contatos = new ArrayList<Contatos>();
 
-    public Marca(long id, String nome) {
+    public Marca(long id, String nome, Endereco enderecoMarca) {
         this.id = id;
         this.nome = nome;
+        this.enderecoMarca = enderecoMarca;
     }
 
     public long getId() {
@@ -30,6 +32,14 @@ public class Marca {
         this.nome = nome;
     }
 
+    public Endereco getEnderecoMarca() {
+        return enderecoMarca;
+    }
+
+    public void setEnderecoMarca(Endereco enderecoMarca) {
+        this.enderecoMarca = enderecoMarca;
+    }
+
     public List<Contatos> getContatos() {
         return contatos;
     }
@@ -38,13 +48,12 @@ public class Marca {
         this.contatos = contatos;
     }
 
-    // sem métodos
-    
     @Override
     public String toString() {
         return "Marca{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
+                ", enderecoMarca=" + enderecoMarca +
                 ", contatos=" + contatos +
                 '}';
     }
