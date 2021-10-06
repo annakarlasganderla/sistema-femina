@@ -13,16 +13,17 @@ public class Produto {
     private int qtd;
     private List<ModelosDosProdutos> modeloDosProdutos = new ArrayList<ModelosDosProdutos>();
     private List<Cor> cor = new ArrayList<Cor>();
-    private List<Categoria> categoria = new ArrayList<Categoria>();
+    private Categoria categoria;
     private List<Tamanho> tamanho = new ArrayList<Tamanho>();
     private Fornecedor fornecedor; // obj
 
-    public Produto(long id, String nome, Double preco, int qtd, ClassJava.Fornecedor fornecedor) {
+    public Produto(long id, String nome, Double preco, int qtd, ClassJava.Fornecedor fornecedor, ClassJava.Categoria categoria) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.qtd = qtd;
         this.fornecedor = fornecedor;
+        this.categoria = categoria;
     }
 
     public long getId() {
@@ -73,11 +74,11 @@ public class Produto {
         this.cor = cor;
     }
 
-    public List<Categoria> getCategoria() {
+    public ClassJava.Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(List<Categoria> categoria) {
+    public void setCategoria(ClassJava.Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -106,7 +107,7 @@ public class Produto {
                 ", qtd=" + qtd +
                 ", modeloDosProdutos=" + modeloDosProdutos +
                 ", cor=" + cor +
-                ", categoria=" + categoria +
+                ", categoria=" + categoria.getNome() +
                 ", tamanho=" + tamanho +
                 ", fornecedor=" + fornecedor +
                 '}';
