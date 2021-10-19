@@ -1,78 +1,62 @@
 package ClassJava;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        // CLASSES RELATIVAS AO PRODUTO -------------------------------------
-        ModelosDosProdutos mod = new ModelosDosProdutos(1,"banana-prata");
-        Cor c1 = new Cor("amarelo","#000125");
-        Categoria cat1 = new Categoria("fruta",5);
-        Tamanho t1 = new Tamanho("p", 15);
-        Endereco enderecoMarca = new Endereco("brasil","paraná","sao miguel do iguaçu","tatata","123.456-9",1453);
-        Marca marca1 = new Marca(0, "hope",enderecoMarca);
+        Scanner leitor = new Scanner(System.in);
 
-        // CLASSE RELATIVA AO ENDEREÇO DO FORNECEDOR
-        Endereco enderecoFornecedor = new Endereco("brasil","paraná","foz do iguaçu","tangará","123.456-7",723);
-        Fornecedor fornecedor1 = new Fornecedor(15,"frutas.ltda","1254684546", enderecoFornecedor);
-        Contatos contatoFornecedor = new Contatos(2,"123456","maju@gmial.com");
-        Produto p1 = new Produto(1,"banana",1.22,5,fornecedor1, cat1);
+        int op;
 
-        fornecedor1.getContatos().add(contatoFornecedor);
+        do {
+            do {
+                System.out.println("-------------------------------------------");
+                System.out.println("|  0 - Sair                               |");
+                System.out.println("|  1 - Cadastrar produto                  |");
+                System.out.println("|  2 - Visualizar produtos cadastrados    |");
+                System.out.println("|  3 - Editar produto                     |");
+                System.out.println("|  4 - Deletar produto                    |");
+                System.out.println("-------------------------------------------");
+                System.out.println("|        Digite aqui sua opção:           |");
+                op = leitor.nextInt();
+            } while (op == 5);
 
-        p1.getModeloDosProdutos().add(mod);
-        p1.getCor().add(c1);
-        p1.getTamanho().add(t1);
-        cat1.getProduto().add(p1);
+            switch (op) {
+                case 0:
+                    break;
 
-        // CLASSES RELATIVAS AO CLIENTE  ------------------------------------------
-        Endereco enderecoCliente = new Endereco("brasil","paraná","itaipulandia","aaaaaaa","123.456-5",23);
-        Contatos contato1 = new Contatos(1,"456456","anna@gmail.com");
-        Cliente cliente = new Cliente(48,"anna","123456",18,enderecoCliente);
+                case 1:
+                    System.out.println("Função cadastrar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
 
-        cliente.getContatos().add(contato1);
+                case 2:
+                    System.out.println("Função visualizar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
 
-        marca1.getContatos().add(contato1);
+                case 3:
+                    System.out.println("Função editar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
 
-        Favoritos favoritos = new Favoritos();
+                case 4:
+                    System.out.println("Função deletar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
 
-        favoritos.getProdutos().add(p1);
-        favoritos.getCliente().add(cliente);
-
-        // CLASSES RELATIVAS A LOJA -----------------------------------
-        Endereco enderecoLoja1 = new Endereco("brasil","paraná","foz do iguaçu","tangará","123.456-3",13);
-        Endereco enderecoFuncionario = new Endereco("brasil","paraná","itaipulandia","lalala","123.456-6",453);
-
-        Funcionarios funcionario = new Funcionarios(0, "Dayane", "vendedora", enderecoFuncionario);
-        funcionario.getContatos().add(contato1);
-
-        // CLASSES RELATIVAS A PROMOÇÕES  -------------------------
-
-        ProdutoDesconto produtoDesconto = new ProdutoDesconto(25.00);
-
-        Ofertas ofertas = new Ofertas(5);
-
-        ofertas.getProdutoComDesconto().add(produtoDesconto);
-
-        Lojas lojas = new Lojas(1, "Femina1", enderecoLoja1);
-
-        Outlet outlet = new Outlet();
-
-        outlet.getLojas().add(lojas);
-
-        lojas.getContatos().add(contato1);
-        lojas.getFuncionarios().add(funcionario);
-        lojas.getProdutos().add(p1);
-
-        // CLASSES RELATIVAS A DESTAQUES ----------------------------
-        Destaques destaque = new Destaques();
-        destaque.setNomeColecao("Coleção inverno");
-        destaque.getProdutos().add(p1);
-
-        System.out.println(p1);
-        System.out.println(cliente);
-        System.out.println(lojas);
-        System.out.println(destaque);
-        System.out.println(cat1);
+                default:
+                    System.out.println("Opção inválida");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+            }
+        } while (op != 0);
     }
 }
