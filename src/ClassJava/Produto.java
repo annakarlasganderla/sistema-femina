@@ -1,7 +1,5 @@
 package ClassJava;
 
-// fazer o toString depois de relacionar todas as classes
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +9,11 @@ public class Produto {
     private String nome;
     private Double preco;
     private int qtd;
+    private Categoria categoria;
     private Fornecedor fornecedor; // obj
 
     private List<ModelosDosProdutos> modeloDosProdutos = new ArrayList<ModelosDosProdutos>();
     private List<Cor> cor = new ArrayList<Cor>();
-    private Categoria categoria;
     private List<Tamanho> tamanho = new ArrayList<Tamanho>();
 
     public Produto(long id, String nome, Double preco, int qtd, ClassJava.Fornecedor fornecedor, ClassJava.Categoria categoria) {

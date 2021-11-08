@@ -55,6 +55,14 @@ public class Funcionarios {
         this.cargo = cargo;
     }
 
+    public List<Contatos> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contatos> contatos) {
+        this.contatos = contatos;
+    }
+
     @Override
     public String toString() {
         return "Funcionarios{" +

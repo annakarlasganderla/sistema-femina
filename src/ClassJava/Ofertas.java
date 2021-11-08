@@ -1,9 +1,13 @@
 package ClassJava;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Ofertas {
 
     private long id;
-    // lista de produtosDesconto
+    private List<ProdutoDesconto> produtoComDesconto = new ArrayList<ProdutoDesconto>(); // lista de produtosDesconto
 
     public Ofertas(long id) {
         this.id = id;
@@ -15,6 +19,14 @@ public class Ofertas {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<ProdutoDesconto> getProdutoComDesconto() {
+        return produtoComDesconto;
+    }
+
+    public void setProdutoComDesconto(List<ProdutoDesconto> produtoComDesconto) {
+        this.produtoComDesconto = produtoComDesconto;
     }
 
     @Override

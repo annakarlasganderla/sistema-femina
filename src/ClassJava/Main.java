@@ -1,26 +1,62 @@
 package ClassJava;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        ModelosDosProdutos mod = new ModelosDosProdutos(1,"banana-prata");
-        Cor c1 = new Cor("amarelo","#000125");
-        Categoria cat1 = new Categoria("fruta",5);
-        Tamanho t1 = new Tamanho("p", 15);
+        Scanner leitor = new Scanner(System.in);
 
-        Endereco endereco = new Endereco("brasil","paraná","foz do iguaçu","tangará","123456",123);
-        Fornecedor fornecedor1 = new Fornecedor(15,"frutas.ltda","1254684546", endereco);
-        Contatos contato1 = new Contatos(1,"456456","anna@gmail.com");
-        Produto p1 = new Produto(1,"banana",1.22,5,fornecedor1, cat1);
+        int op;
 
-        p1.getModeloDosProdutos().add(mod);
-        p1.getCor().add(c1);
-        p1.getTamanho().add(t1);
+        do {
+            do {
+                System.out.println("-------------------------------------------");
+                System.out.println("|  0 - Sair                               |");
+                System.out.println("|  1 - Cadastrar produto                  |");
+                System.out.println("|  2 - Visualizar produtos cadastrados    |");
+                System.out.println("|  3 - Editar produto                     |");
+                System.out.println("|  4 - Deletar produto                    |");
+                System.out.println("-------------------------------------------");
+                System.out.println("|        Digite aqui sua opção:           |");
+                op = leitor.nextInt();
+            } while (op == 5);
 
-        cat1.getProduto().add(p1);
+            switch (op) {
+                case 0:
+                    break;
 
-        System.out.println(p1);
-        System.out.println(cat1);
+                case 1:
+                    System.out.println("Função cadastrar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+
+                case 2:
+                    System.out.println("Função visualizar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+
+                case 3:
+                    System.out.println("Função editar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+
+                case 4:
+                    System.out.println("Função deletar em andamento");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+
+                default:
+                    System.out.println("Opção inválida");
+                    System.out.println("5 - Voltar");
+                    op = leitor.nextInt();
+                    break;
+            }
+        } while (op != 0);
     }
 }

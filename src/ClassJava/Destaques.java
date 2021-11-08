@@ -8,6 +8,9 @@ public class Destaques {
 
     private List<Produto> produto = new ArrayList<Produto>();
 
+    public Destaques() {
+    }
+
     public Destaques(String nomeColecao) {
         this.nomeColecao = nomeColecao;
     }

@@ -8,15 +8,10 @@ public class Cliente {
     private long id;
     private String nome,senha;
     private int idade;
-    private List<Contatos> contatos = new ArrayList<Contatos>();
-    private Endereco endereco;
 
-    public Cliente(long id, String nome, String senha, int idade) {
-        this.id = id;
-        this.nome = nome;
-        this.senha = senha;
-        this.idade = idade;
-    }
+    private List<Contatos> contatos = new ArrayList<Contatos>();
+
+    private Endereco endereco;
 
     public Cliente(long id, String nome, String senha, int idade, Endereco endereco) {
         this.id = id;
